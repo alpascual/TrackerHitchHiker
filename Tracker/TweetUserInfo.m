@@ -16,6 +16,6 @@
 @synthesize bInAppUser = _bInAppUser;
 @synthesize X = _X;
 @synthesize Y = _Y;
-
+@synthesize description = _description;
 
 @end

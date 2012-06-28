@@ -13,6 +13,7 @@
 @property (nonatomic,strong) NSString *userName;
 @property (nonatomic,strong) NSString *lastTweet;
 @property (nonatomic,strong) NSString *imageUrl;
+@property (nonatomic,strong) NSString *description;
 @property (nonatomic) BOOL bInAppUser;
 @property (nonatomic) double X;
 @property (nonatomic) double Y;

@@ -17,6 +17,7 @@
 @synthesize pages = _pages;
 @synthesize tweetView = _tweetView;
 @synthesize pointsToDisplay = _pointsToDisplay;
+@synthesize pointsToDisplayDriver = _pointsToDisplayDriver;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -54,6 +55,7 @@
     self.mapView.showsUserLocation = YES;
     
     self.pointsToDisplay = [[NSMutableArray alloc] init];
+    self.pointsToDisplayDriver = [[NSMutableArray alloc] init];
     
     
     // Start the timer fast to download and display
@@ -68,6 +70,75 @@
 
 - (void) computePoints:(NSString *)hashtag pointArray:(NSMutableArray *)pointsToDisplay label:(NSString*)myLabel {
     // TODO
+    
+    // TOOD Make a request to the Json part
+    NSString *myRequestString = [[NSString alloc] initWithFormat:@"http://tracker.alsandbox.us/api/Json?sHashTag=%@", hashtag];
+    NSLog(@"Request string %@", myRequestString);
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:myRequestString]];    
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    NSString *JsonString = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    NSLog(@"My Json %@", JsonString);
+    
+    // TODO Parse Json and put it in the map
+    NSError *error = nil;
+    NSArray *theArray = [NSDictionary dictionaryWithJSONString:JsonString error:&error];
+    if ( theArray == nil)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Inernet"
+                                                        message:@"No internet detected to download other users positions."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    
+    [pointsToDisplay removeAllObjects];
+    
+    for(int i=0; i < theArray.count; i++)
+    {
+        TweetUserInfo *user = [[TweetUserInfo alloc] init];
+        NSDictionary *oneObject = [theArray objectAtIndex:i];
+        user.userName = [oneObject objectForKey:@"TwitterName"];
+        user.X = [[oneObject objectForKey:@"X"] doubleValue];
+        user.Y = [[oneObject objectForKey:@"Y"] doubleValue];
+        user.bInAppUser = YES;
+        user.description = hashtag;
+        [self getLastTweet:user.userName:user];
+        
+        NSLog(@"Last Tweet %@ and Image %@", user.lastTweet, user.imageUrl);
+        
+        if ( user.lastTweet == nil) {
+            user.lastTweet = @"No recent status";
+            user.imageUrl = @"https://si0.twimg.com/a/1327685130/images/about-birds.png";
+        }
+        
+        [pointsToDisplay addObject:user];
+    }
+    
+    
+    //Request a search in Twitter with GeoLocation and put it in the map
+    //http://search.twitter.com/search.json?q=mavp12&geocode=Lat,Long,15mi
+    NSArray *twitterKeys = [self twitterRequest:hashtag];
+    NSLog(@"Twitter %@", twitterKeys);
+    for (int u=0; u < twitterKeys.count; u++) {
+        NSDictionary *allItems = [twitterKeys objectAtIndex:u];
+        NSLog(@"all Items %@", allItems);
+        
+        TweetUserInfo *tUser = [[TweetUserInfo alloc] init];
+        tUser.userName = [allItems objectForKey:@"from_user"];
+        tUser.imageUrl = [allItems objectForKey:@"profile_image_url"];
+        tUser.lastTweet = [allItems objectForKey:@"text"];
+        tUser.X = self.trackingManager.lastLocation.coordinate.latitude;
+        tUser.Y = self.trackingManager.lastLocation.coordinate.longitude;
+        tUser.bInAppUser = NO;
+        
+        if ( tUser.lastTweet != nil && tUser.lastTweet.length > 0)
+            [pointsToDisplay addObject:tUser];
+    }
+    
+    [self addArrayToMap:pointsToDisplay];
 }
 
 - (void)timerToRefreshFunc:(NSTimer *)timer 
@@ -77,8 +148,11 @@
     
     if ( self.activity.isAnimating == NO )
         [self.activity startAnimating];
+    
+    [self computePoints:@"hitchhiker" pointArray:self.pointsToDisplay label:@"hitchhiker"];
+    [self computePoints:@"hitchdriver" pointArray:self.pointsToDisplayDriver label:@"hitchdriver"];
  
-    NSUserDefaults *myPrefs = [NSUserDefaults standardUserDefaults];     
+    /*NSUserDefaults *myPrefs = [NSUserDefaults standardUserDefaults];     
     NSString *hashtag = [myPrefs objectForKey:@"hashtag"];
     
 
@@ -148,7 +222,7 @@
             [self.pointsToDisplay addObject:tUser];
     }
     
-    [self addArrayToMap:self.pointsToDisplay];
+    [self addArrayToMap:self.pointsToDisplay];*/
     
     [self.activity stopAnimating];
     // Reschedule

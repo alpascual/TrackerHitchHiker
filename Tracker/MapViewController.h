@@ -25,6 +25,7 @@
 @property (nonatomic, strong) IBOutlet UIPageControl *pages;
 @property (nonatomic, strong) TweetsTablesView *tweetView;
 @property (nonatomic, strong) NSMutableArray *pointsToDisplay;
+@property (nonatomic, strong) NSMutableArray *pointsToDisplayDriver;
 
 - (NSArray *) twitterRequest:(NSString *)hashTag;
 - (void)getLastTweet:(NSString *)username:(TweetUserInfo *) userTweet;
@@ -32,6 +33,7 @@
 - (void) addStateToMap:(CLLocationCoordinate2D)location : (NSString*)twitterName;
 + (CGFloat)annotationPadding;
 + (CGFloat)calloutHeight;
+- (void) computePoints:(NSString *)hashtag pointArray:(NSMutableArray *)pointsToDisplay label:(NSString*)myLabel;
 
 
 @end

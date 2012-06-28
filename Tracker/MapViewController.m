@@ -66,6 +66,10 @@
     self.timerToRefresh = [NSTimer scheduledTimerWithTimeInterval:(0.1) target:self selector:@selector(timerToRefreshFunc:) userInfo:nil repeats:NO];
 }
 
+- (void) computePoints:(NSString *)hashtag pointArray:(NSMutableArray *)pointsToDisplay label:(NSString*)myLabel {
+    // TODO
+}
+
 - (void)timerToRefreshFunc:(NSTimer *)timer 
 {
     [self.timerToRefresh invalidate];

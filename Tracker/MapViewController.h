@@ -30,7 +30,7 @@
 - (NSArray *) twitterRequest:(NSString *)hashTag;
 - (void)getLastTweet:(NSString *)username:(TweetUserInfo *) userTweet;
 - (void) addArrayToMap:(NSArray *)allPeople;
-- (void) addStateToMap:(CLLocationCoordinate2D)location : (NSString*)twitterName;
+- (void) addStateToMap:(CLLocationCoordinate2D)location : (NSString*)twitterName sub:(NSString*) description;
 + (CGFloat)annotationPadding;
 + (CGFloat)calloutHeight;
 - (void) computePoints:(NSString *)hashtag pointArray:(NSMutableArray *)pointsToDisplay label:(NSString*)myLabel;

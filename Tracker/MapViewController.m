@@ -101,6 +101,7 @@
         TweetUserInfo *user = [[TweetUserInfo alloc] init];
         NSDictionary *oneObject = [theArray objectAtIndex:i];
         user.userName = [oneObject objectForKey:@"TwitterName"];
+        user.description = myLabel;
         user.X = [[oneObject objectForKey:@"X"] doubleValue];
         user.Y = [[oneObject objectForKey:@"Y"] doubleValue];
         user.bInAppUser = YES;
@@ -128,6 +129,7 @@
         
         TweetUserInfo *tUser = [[TweetUserInfo alloc] init];
         tUser.userName = [allItems objectForKey:@"from_user"];
+        tUser.description = myLabel;
         tUser.imageUrl = [allItems objectForKey:@"profile_image_url"];
         tUser.lastTweet = [allItems objectForKey:@"text"];
         tUser.X = self.trackingManager.lastLocation.coordinate.latitude;
@@ -295,16 +297,17 @@
         loc.longitude = user.X;
         loc.latitude = user.Y;
         
-        [self addStateToMap:loc:user.userName];
+        [self addStateToMap:loc:user.userName sub:user.description];
     }
 }
 
-- (void) addStateToMap:(CLLocationCoordinate2D)location : (NSString*)twitterName
+- (void) addStateToMap:(CLLocationCoordinate2D)location : (NSString*)twitterName sub:(NSString*) description
 {	
 	MyAnnotation *addAnnotation = [[MyAnnotation alloc] init];
 	
 	[addAnnotation setCoordinate:location];
 	[addAnnotation setTitle:twitterName];
+    [addAnnotation setSubtitle:description];
     
 	
 	[self.mapView addAnnotation:addAnnotation];

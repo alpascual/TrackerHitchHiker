@@ -22,6 +22,7 @@
 
 - (void) setCoordinate:(CLLocationCoordinate2D)newCoordinate;
 - (void) setTitle:(NSString*)newString;
+- (void) setSubtitle:(NSString*)newString;
 - (void) setTweet:(NSString*)newTweet;
 - (NSString *)title;
 

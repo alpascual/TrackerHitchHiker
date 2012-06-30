@@ -24,6 +24,11 @@
 	title = newString;
 }
 
+- (void) setSubtitle:(NSString*)newString
+{
+    subtitle = newString;
+}
+
 - (void) setTweet:(NSString*)newTweet
 {
     tweet = newTweet;       

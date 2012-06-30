@@ -53,6 +53,8 @@
 
 - (IBAction)forVolunteer:(id)sender
 {
+    [self.trackingManager submitLastNOW];
+    
     [self sendToMap:@"hitchdriver"];
 }
 

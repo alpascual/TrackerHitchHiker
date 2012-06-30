@@ -48,6 +48,8 @@
     // Make sure to update the map
     [self.trackingManager submitLastNOW];
     
+    // TODO add information about where is that person going or take a picture
+    
     [self sendToMap:@"hitchhiker"];
 }
 

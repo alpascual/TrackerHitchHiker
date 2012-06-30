@@ -78,9 +78,11 @@
 //        event.trackingManager = self.trackingManager;
 //        [self presentModalViewController:event animated:YES];
         
+        
         HitchhikerViewController *hitch = [[HitchhikerViewController alloc] initWithNibName:@"HitchhikerViewController" bundle:nil];
         hitch.trackingManager = self.trackingManager;
         [self presentModalViewController:hitch animated:YES];
+        //test
         
     }
     

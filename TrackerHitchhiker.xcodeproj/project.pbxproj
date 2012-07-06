@@ -10,6 +10,10 @@
 		763212E014D4C4E80048C75A /* EventsTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 763212DE14D4C4E80048C75A /* EventsTable.m */; };
 		763212E114D4C4E80048C75A /* EventsTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 763212DF14D4C4E80048C75A /* EventsTable.xib */; };
 		763D84B814DE1221008ECB99 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 763D84B714DE1221008ECB99 /* iAd.framework */; };
+		767774A415A68D5F007AAF52 /* OnlyHitchhiker.m in Sources */ = {isa = PBXBuildFile; fileRef = 767774A215A68D5F007AAF52 /* OnlyHitchhiker.m */; };
+		767774A515A68D5F007AAF52 /* OnlyHitchhiker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767774A315A68D5F007AAF52 /* OnlyHitchhiker.xib */; };
+		767774A815A68E80007AAF52 /* cardboard.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 767774A715A68E80007AAF52 /* cardboard.jpeg */; };
+		767774AA15A694CA007AAF52 /* cardboard2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 767774A915A694CA007AAF52 /* cardboard2.jpeg */; };
 		76BB2E0A14C657F00030E504 /* TrackingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BB2E0914C657F00030E504 /* TrackingManager.m */; };
 		76BB2E0D14C65A990030E504 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76BB2E0C14C65A990030E504 /* CoreLocation.framework */; };
 		76BB2E0F14C65B5A0030E504 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76BB2E0E14C65B5A0030E504 /* SystemConfiguration.framework */; };
@@ -63,6 +67,11 @@
 		763212DE14D4C4E80048C75A /* EventsTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTable.m; sourceTree = "<group>"; };
 		763212DF14D4C4E80048C75A /* EventsTable.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTable.xib; sourceTree = "<group>"; };
 		763D84B714DE1221008ECB99 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		767774A115A68D5F007AAF52 /* OnlyHitchhiker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlyHitchhiker.h; sourceTree = "<group>"; };
+		767774A215A68D5F007AAF52 /* OnlyHitchhiker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlyHitchhiker.m; sourceTree = "<group>"; };
+		767774A315A68D5F007AAF52 /* OnlyHitchhiker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnlyHitchhiker.xib; sourceTree = "<group>"; };
+		767774A715A68E80007AAF52 /* cardboard.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardboard.jpeg; sourceTree = "<group>"; };
+		767774A915A694CA007AAF52 /* cardboard2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardboard2.jpeg; sourceTree = "<group>"; };
 		76BB2E0814C657F00030E504 /* TrackingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingManager.h; sourceTree = "<group>"; };
 		76BB2E0914C657F00030E504 /* TrackingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingManager.m; sourceTree = "<group>"; };
 		76BB2E0C14C65A990030E504 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -199,6 +208,9 @@
 				76C3BE741599633100D5DC3D /* HitchhikerViewController.h */,
 				76C3BE751599633100D5DC3D /* HitchhikerViewController.m */,
 				76C3BE761599633100D5DC3D /* HitchhikerViewController.xib */,
+				767774A115A68D5F007AAF52 /* OnlyHitchhiker.h */,
+				767774A215A68D5F007AAF52 /* OnlyHitchhiker.m */,
+				767774A315A68D5F007AAF52 /* OnlyHitchhiker.xib */,
 			);
 			name = Hitchhiking;
 			sourceTree = "<group>";
@@ -282,6 +294,8 @@
 		76CCB5FB14C642D800552E3D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				767774A915A694CA007AAF52 /* cardboard2.jpeg */,
+				767774A715A68E80007AAF52 /* cardboard.jpeg */,
 				76CCB5FC14C642D800552E3D /* desert.jpg */,
 				76CCB5FD14C642D800552E3D /* Dialogs */,
 				76CCB60714C642D800552E3D /* Icons */,
@@ -389,6 +403,9 @@
 				76C43EDF14C7DE6B0009F29A /* Icon@2x.png in Resources */,
 				763212E114D4C4E80048C75A /* EventsTable.xib in Resources */,
 				76C3BE781599633100D5DC3D /* HitchhikerViewController.xib in Resources */,
+				767774A515A68D5F007AAF52 /* OnlyHitchhiker.xib in Resources */,
+				767774A815A68E80007AAF52 /* cardboard.jpeg in Resources */,
+				767774AA15A694CA007AAF52 /* cardboard2.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +436,7 @@
 				76C43ED914C7960F0009F29A /* TweetUserInfo.m in Sources */,
 				763212E014D4C4E80048C75A /* EventsTable.m in Sources */,
 				76C3BE771599633100D5DC3D /* HitchhikerViewController.m in Sources */,
+				767774A415A68D5F007AAF52 /* OnlyHitchhiker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

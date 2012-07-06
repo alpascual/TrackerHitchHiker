@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MapViewController.h"
+#import "OnlyHitchhiker.h"
 
 @interface HitchhikerViewController : UIViewController
 

@@ -44,10 +44,7 @@
 }
 
 - (IBAction)forHitchHiker:(id)sender
-{
-    // Make sure to update the map
-    [self.trackingManager submitLastNOW];
-    
+{   
     // TODO add information about where is that person going or take a picture
     
     [self sendToMap:@"hitchhiker"];
@@ -55,20 +52,31 @@
 
 - (IBAction)forVolunteer:(id)sender
 {
-    [self.trackingManager submitLastNOW];
-    
     [self sendToMap:@"hitchdriver"];
 }
 
 - (void) sendToMap:(NSString*)hashTag
 {
+    // Make sure to update the map
+    [self.trackingManager submitLastNOW];
+    
     NSUserDefaults *myPrefs = [NSUserDefaults standardUserDefaults]; 
     [myPrefs setObject:hashTag forKey:@"hashtag"];
     [myPrefs synchronize];
     
-    MapViewController *map = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
-    map.trackingManager = self.trackingManager;
-    [self presentModalViewController:map animated:YES];
+    if ( [hashTag isEqualToString:@"hitchhiker"] == YES )
+    {
+        OnlyHitchhiker *onlyForHitch = [[OnlyHitchhiker alloc] initWithNibName:@"OnlyHitchhiker" bundle:nil];
+        onlyForHitch.trackingManager = self.trackingManager;
+        [self presentModalViewController:onlyForHitch animated:YES];
+    }
+    
+    else {
+        
+        MapViewController *map = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
+        map.trackingManager = self.trackingManager;
+        [self presentModalViewController:map animated:YES];
+    }
 }
 
 @end

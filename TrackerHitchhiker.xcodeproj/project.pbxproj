@@ -14,6 +14,7 @@
 		767774A515A68D5F007AAF52 /* OnlyHitchhiker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767774A315A68D5F007AAF52 /* OnlyHitchhiker.xib */; };
 		767774A815A68E80007AAF52 /* cardboard.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 767774A715A68E80007AAF52 /* cardboard.jpeg */; };
 		767774AA15A694CA007AAF52 /* cardboard2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 767774A915A694CA007AAF52 /* cardboard2.jpeg */; };
+		76B07FB015A93C8D00A87598 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B07FAF15A93C8C00A87598 /* Twitter.framework */; };
 		76BB2E0A14C657F00030E504 /* TrackingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BB2E0914C657F00030E504 /* TrackingManager.m */; };
 		76BB2E0D14C65A990030E504 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76BB2E0C14C65A990030E504 /* CoreLocation.framework */; };
 		76BB2E0F14C65B5A0030E504 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76BB2E0E14C65B5A0030E504 /* SystemConfiguration.framework */; };
@@ -72,6 +73,7 @@
 		767774A315A68D5F007AAF52 /* OnlyHitchhiker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnlyHitchhiker.xib; sourceTree = "<group>"; };
 		767774A715A68E80007AAF52 /* cardboard.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardboard.jpeg; sourceTree = "<group>"; };
 		767774A915A694CA007AAF52 /* cardboard2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardboard2.jpeg; sourceTree = "<group>"; };
+		76B07FAF15A93C8C00A87598 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		76BB2E0814C657F00030E504 /* TrackingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingManager.h; sourceTree = "<group>"; };
 		76BB2E0914C657F00030E504 /* TrackingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingManager.m; sourceTree = "<group>"; };
 		76BB2E0C14C65A990030E504 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -147,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76B07FB015A93C8D00A87598 /* Twitter.framework in Frameworks */,
 				763D84B814DE1221008ECB99 /* iAd.framework in Frameworks */,
 				76BB2E1514C660330030E504 /* MapKit.framework in Frameworks */,
 				76BB2E0F14C65B5A0030E504 /* SystemConfiguration.framework in Frameworks */,
@@ -218,6 +221,7 @@
 		76CCB5CF14C6425E00552E3D = {
 			isa = PBXGroup;
 			children = (
+				76B07FAF15A93C8C00A87598 /* Twitter.framework */,
 				763D84B714DE1221008ECB99 /* iAd.framework */,
 				76BB2E1414C660330030E504 /* MapKit.framework */,
 				76BB2E0E14C65B5A0030E504 /* SystemConfiguration.framework */,

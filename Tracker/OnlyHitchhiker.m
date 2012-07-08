@@ -50,6 +50,10 @@
     [myPrefs synchronize];
     
     //TODO send a tweet and then send it to the map
+    TWTweetComposeViewController* tweetView = [[TWTweetComposeViewController alloc] init];
+    NSString *tweetMsg = [[NSString alloc] initWithFormat:@"Looking for a ride to %@"];
+    [tweetView setInitialText:tweetMsg];
+    [self presentModalViewController:tweetView animated:YES];
     
     MapViewController *map = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
     map.trackingManager = self.trackingManager;
